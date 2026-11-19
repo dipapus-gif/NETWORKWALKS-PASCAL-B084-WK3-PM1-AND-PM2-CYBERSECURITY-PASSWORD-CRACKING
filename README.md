@@ -54,7 +54,7 @@ $pdf$4*4*128*-1060*1*16*55d1a5c14175da449753199e44971d32*32*777fd021a7f3c5ae598c
 | PDF File              | Password Cracked | Status          |
 |-----------------------|------------------|-----------------|
 | My-Locked-PDF1.pdf    | `password1`      | Cracked         |
-| My-Locked-PDF2.pdf    | (via persistence)| Cracked         |
+| My-Locked-PDF2.pdf    | (persistence)    | Cracked         |
 | My-Locked-PDF3.pdf    | `1qaz2wsx`       | Cracked         |
 
 ### 3. John the Ripper (Johnny GUI)
@@ -83,6 +83,49 @@ nw{networkwalks_persistence_jtr_270521}
 ```
 nw{networkwalks_flag_260821_1}
 ```
+
+---
+
+## Proof of Work – Screenshots
+
+All original screenshots from the assignment session are documented below (timestamps match the captured evidence):
+
+### Hash Calculator – PDF Upload & Hash Extraction
+- `Screenshot 2026-11-18 205750.png` / `205811.png` / `205838.png`  
+  → Hash Calculator interface showing `My-Locked-PDF1.pdf` (65.2 KB) loaded, encrypted status confirmed, and full `$pdf$` hash extracted (pdf2john / hashcat compatible). Revision R4, Version V4, 128-bit key.
+
+### Password Cracker Lab – Dictionary Attack Setup
+- `Screenshot 2026-11-18 210605.png` / `211003.png` / `211055.png`  
+  → Networkwalks Password Cracker (Dictionary Attack Lab). Hash pasted, built-in 100-password wordlist active, ready to start cracking.
+
+### Successful Crack – password1
+- `Screenshot 2026-11-18 211204.png`  
+  → Dictionary attack progress (91/100 tried). **MATCH: password1** found. “PASSWORD CRACKED SUCCESSFULLY” screen displayed.
+
+### Unlocking PDF1 & Capturing Flag 1
+- `Screenshot 2026-11-18 211346.png`  
+  → Password prompt for `My-Locked-PDF1.pdf`.
+- `Screenshot 2026-11-18 211425.png` / `211450.png`  
+  → PDF unlocked. Congratulations screen + **Flag1: `nw{networkwalks_flag1_jtr_270521_1}`** highlighted.
+
+### PDF2 Unlock & Flag 2
+- `Screenshot 2026-11-18 211923.png` / `211942.png`  
+  → `My-Locked-PDF2.pdf` opened. “Congratulations! You have captured another flag.”  
+  **Flag: `nw{networkwalks_persistence_jtr_270521}`**
+
+### PDF3 Crack – 1qaz2wsx & Flag 3
+- `Screenshot 2026-11-18 213555.png`  
+  → Dictionary attack on third hash. **MATCH: 1qaz2wsx**.
+- `Screenshot 2026-11-18 213624.png`  
+  → PDF3 unlocked. **Flag: `nw{networkwalks_flag_260821_1}`**
+
+### John the Ripper (Johnny GUI) – Offline Confirmation
+- `Screenshot 2026-11-19 105225.png`  
+  → Johnny (John the Ripper GUI) showing the PDF hash successfully cracked with password `password1`. Status: 100% (1/1 cracked).
+- `Screenshot 2026-11-19 105405.png`  
+  → Confirmation of unlocked PDF1 content and Flag1 after using the password obtained via John the Ripper.
+
+> **Note on binary screenshots:** The original PNG files (16 screenshots, ~8 MB total) were captured during the session. Due to platform constraints on binary file uploads via this interface, the full image files should be uploaded manually from the local machine into a `screenshots/` folder for complete visual proof. The detailed descriptions above serve as structured evidence of every step completed.
 
 ---
 
